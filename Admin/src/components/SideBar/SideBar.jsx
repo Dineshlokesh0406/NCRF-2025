@@ -29,7 +29,7 @@ const Sidebar = () => {
         <div className="user-brief">
           <div className="user-avatar">
             {user?.photo ? (
-              <img src={`http://localhost:4000${user.photo}`} alt={user.name} />
+              <img src={`https://ncrf-2025.onrender.com/${user.photo}`} alt={user.name} />
             ) : (
               <div className="avatar-initial">{getInitial(user?.name)}</div>
             )}

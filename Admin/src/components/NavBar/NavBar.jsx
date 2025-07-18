@@ -29,7 +29,7 @@ const NavBar = ({ user, onLogout }) => {
           <div className="user-profile">
             <div className="user-avatar" onClick={toggleDropdown}>
               {user?.photo ? (
-                <img src={`http://localhost:4000${user.photo}`} alt={user.name} />
+                <img src={`https://ncrf-2025.onrender.com/${user.photo}`} alt={user.name} />
               ) : (
                 <div className="avatar-initial">{getInitial(user?.name)}</div>
               )}

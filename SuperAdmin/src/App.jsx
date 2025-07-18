@@ -20,7 +20,7 @@ import './App.css'
 
 // Main App wrapper with authentication
 const AppWrapper = () => {
-  const url='http://localhost:4000'
+  const url='https://ncrf-2025.onrender.com/'
 
   return (
     <AuthProvider url={url}>

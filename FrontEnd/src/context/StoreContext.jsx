@@ -7,7 +7,7 @@ export const StoreContextProvider = ({ children }) => {
   const [token, setToken] = useState("");
   const [student, setStudent] = useState(null);
   const [loading, setLoading] = useState(true);
-  const url = "http://localhost:4000";
+  const url = "https://ncrf-2025.onrender.com/";
 
   const fetchStudentProfile = async () => {
     try {

@@ -1,5 +1,5 @@
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175']
+const allowedOrigins = ['https://ncrf-frontend.onrender.com', 'https://ncrf-admin.onrender.com', 'https://ncrf-superadmin.onrender.com']
 
 const corsOptions ={
     origin: (origin,callback)=>{
