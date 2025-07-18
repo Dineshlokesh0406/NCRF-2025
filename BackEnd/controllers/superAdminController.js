@@ -1,6 +1,6 @@
 const SuperAdmin = require('../models/SuperAdmin');
 const LoginHistory = require('../models/LoginHistory');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const speakeasy = require('speakeasy');
 const QRCode = require('qrcode');

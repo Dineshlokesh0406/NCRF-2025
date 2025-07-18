@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const userModel = require('./model/userModel');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 async function createTestUser() {
