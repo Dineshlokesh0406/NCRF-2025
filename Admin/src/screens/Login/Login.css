@@ -1,0 +1,312 @@
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ncrf-login-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #1e2a3a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Left side styling */
+.ncrf-login-left {
+  flex: 0 0 60%;
+  background-color: #1e2a3a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.ncrf-header {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.ncrf-logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.ncrf-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-right: 15px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.ncrf-title h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ncrf-welcome {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+.ncrf-welcome h3 {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.ncrf-notice-board {
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  max-width: 90%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: auto;
+  min-height: 300px;
+  border-left: 5px solid #c22326;
+  margin-top: 20px;
+}
+
+.ncrf-notice-board h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.ncrf-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 15px;
+}
+
+.ncrf-notice-content {
+  font-size: 14px;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c22326 #f0f0f0;
+}
+
+.ncrf-notice-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ncrf-notice-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.ncrf-notice-content::-webkit-scrollbar-thumb {
+  background-color: #c22326;
+  border-radius: 4px;
+}
+
+.notice-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.notice-icon-container {
+  margin-right: 10px;
+}
+
+.notice-icon {
+  color: #c22326;
+  font-size: 18px;
+}
+
+.notice-text {
+  flex: 1;
+  font-weight: 600;
+}
+
+.notice-list {
+  margin-top: 5px;
+  padding-left: 25px;
+  list-style-type: decimal;
+}
+
+.notice-list li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+/* Right side styling */
+.ncrf-login-right {
+  flex: 0 0 40%;
+  background-color: #c22326; /* Red color */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.ncrf-login-form-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #c22326;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.ncrf-login-form-container h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.ncrf-login-form {
+  width: 100%;
+}
+
+.ncrf-form-group {
+  margin-bottom: 18px;
+}
+
+.ncrf-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  font-size: 16px;
+}
+
+.ncrf-form-group input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: none;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 40px;
+}
+
+.ncrf-error-message {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.ncrf-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ncrf-forgot-password {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ncrf-forgot-password:hover {
+  text-decoration: underline;
+}
+
+.ncrf-login-button {
+  background-color: white;
+  color: #c22326;
+  border: none;
+  padding: 8px 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .ncrf-login-container {
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .ncrf-login-left, .ncrf-login-right {
+    flex: none;
+  }
+
+  .ncrf-login-left {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .ncrf-login-form-container {
+    padding: 15px;
+  }
+}

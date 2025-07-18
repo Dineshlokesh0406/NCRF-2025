@@ -1,0 +1,316 @@
+/* Faculty Content Container */
+.faculty-content-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faculty-content-header {
+  margin-bottom: 20px;
+}
+
+.faculty-content-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.faculty-content-header p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Faculty Card Styles */
+.faculty-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.faculty-card-header {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.faculty-card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.faculty-card-content {
+  padding: 20px;
+}
+
+/* Form Styles */
+.faculty-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.faculty-select,
+.faculty-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.faculty-select:focus,
+.faculty-input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.faculty-select:disabled,
+.faculty-input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Button Styles */
+.faculty-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.faculty-button.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.faculty-button.primary:hover {
+  background-color: #0069d9;
+}
+
+.faculty-button.primary:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.file-label:hover {
+  background-color: #e9ecef;
+}
+
+.upload-info {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Message Styles */
+.message {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Attendance Table Styles */
+.attendance-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.attendance-table-container {
+  overflow-x: auto;
+}
+
+.faculty-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.faculty-table th,
+.faculty-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.faculty-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.faculty-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.present {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.absent {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.late {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Status Action Buttons */
+.status-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.status-btn {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+.status-btn.present {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.status-btn.present.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-btn.absent {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.status-btn.absent.active {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-btn.late {
+  border-color: #ffc107;
+  color: #856404;
+}
+
+.status-btn.late.active {
+  background-color: #ffc107;
+  color: #856404;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    min-width: 100%;
+  }
+  
+  .file-upload-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .file-label {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .attendance-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .status-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

@@ -1,0 +1,28 @@
+/* App.css */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: filter 0.3s ease;
+}
+
+.app-blur {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Ensure the app takes up full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Body freeze when login popup is shown */
+.body-freeze {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}

@@ -1,0 +1,368 @@
+/* Basic navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0a1e3c;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Logo styling */
+.navbar-brand a {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand a:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+}
+
+/* Main menu styling */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  margin: 0.5rem 0; /* Added margin to top and bottom of navbar items */
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #ff4d4d;
+}
+
+.navbar-menu a.active {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff4d4d;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+  margin: 0.5rem 0; /* Added margin to top and bottom to match other navbar items */
+  transition: color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  color: #ff4d4d;
+}
+
+.dropdown-button.active {
+  font-weight: 600;
+}
+
+.dropdown-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff4d4d;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  margin-left: 0.2rem;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: none;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 0.7rem 1rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+  color: #ff4d4d;
+}
+
+/* Submenu styling */
+.has-submenu {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.has-submenu > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu-arrow {
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+
+.submenu {
+  position: relative;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-left: 3px solid #e0e0e0;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  display: none;
+  z-index: 1001;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Ensure submenu is hidden when dropdown is closed */
+.dropdown-content:not(.show) .submenu {
+  display: none !important;
+}
+
+.submenu-item {
+  color: #333;
+  padding: 0.5rem 1rem !important;
+  display: block;
+  text-decoration: none;
+  font-size: 0.85rem !important;
+  border-bottom: 1px solid #eee;
+}
+
+.submenu-item:last-child {
+  border-bottom: none;
+}
+
+.submenu-item:hover {
+  background-color: #f5f5f5;
+  color: #ff4d4d !important;
+}
+
+/* Login button and profile styling */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: #0a1e3c;
+}
+
+.profile {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile menu toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #0a1e3c;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    display: none;
+    z-index: 999;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu a,
+  .dropdown-button {
+    width: 100%;
+    padding: 0.7rem 0;
+    margin: 0.5rem 0; /* Maintain top and bottom margins on mobile */
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .dropdown-content a,
+  .has-submenu > a {
+    color: white;
+    padding: 0.7rem 1rem;
+  }
+
+  .dropdown-content a:hover,
+  .has-submenu > a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .submenu {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    width: calc(100% - 1.5rem);
+    display: none;
+  }
+
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+
+  /* Ensure submenu is hidden when dropdown is closed on mobile */
+  .navbar-menu:not(.active) .submenu,
+  .dropdown-content:not(.show) .submenu {
+    display: none !important;
+  }
+
+  .submenu-item {
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .submenu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Hamburger animation */
+  .bar.active:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .bar.active:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.active:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar-brand a {
+    font-size: 1.6rem;
+  }
+
+  .login-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .profile {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,62 @@
+.viewinfo-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.content-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.content-item:hover {
+  transform: translateY(-5px);
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.download-link {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+
+.download-link:hover {
+  background: #0056b3;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}

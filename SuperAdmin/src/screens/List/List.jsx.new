@@ -1,0 +1,103 @@
+import React, { useState, useEffect } from 'react';
+import './List.css';
+
+const List = ({ url }) => {
+  const [adminList, setAdminList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchAdminList();
+  }, []);
+
+  const fetchAdminList = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await fetch(`${url}/api/user/admins`);
+      const data = await response.json();
+      if (response.ok) {
+        setAdminList(data);
+      } else {
+        setError('Failed to fetch admin list');
+      }
+    } catch (error) {
+      console.error('Error fetching admin list:', error);
+      setError('Failed to fetch admin list');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const formatDate = (dateString) => {
+    try {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    } catch (error) {
+      return 'Invalid date';
+    }
+  };
+
+  return (
+    <div className="list-container">
+      <h2>Admin List</h2>
+
+      {error && <div className="error-message">{error}</div>}
+
+      <div className="refresh-container">
+        <button 
+          className={`refresh-button ${loading ? 'loading' : ''}`} 
+          onClick={fetchAdminList}
+          disabled={loading}
+        >
+          {loading ? 'Refreshing...' : 'Refresh List'}
+        </button>
+      </div>
+
+      {loading ? (
+        <div className="loading-message">Loading admin list...</div>
+      ) : adminList.length === 0 ? (
+        <div className="no-data-message">No admins found</div>
+      ) : (
+        <div className="admin-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              {adminList.map((admin) => (
+                <tr key={admin.email}>
+                  <td className="admin-photo">
+                    {admin.photo ? (
+                      <img src={`${url}${admin.photo}`} alt={admin.name} />
+                    ) : (
+                      <div className="no-photo">No Photo</div>
+                    )}
+                  </td>
+                  <td>{admin.name}</td>
+                  <td>{admin.email}</td>
+                  <td>{admin.role || 'admin'}</td>
+                  <td>{formatDate(admin.createdAt)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default List;
